@@ -104,7 +104,10 @@ namespace CopyTransformTool
 
                 if (GUILayout.Button("Copy elements"))
                 {
-                    Copy();
+                    if (EditorUtility.DisplayDialog("Are you sure?", "This action can't be undo. Are you sure you want to do the copy with the selected parameters?", "Yes", "No"))
+                    {
+                        Copy();
+                    }
                 }
             }
 
