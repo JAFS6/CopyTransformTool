@@ -1,4 +1,4 @@
-# CopyTransformTool
+# CopyTransform Tool
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](https://raw.githubusercontent.com/JAFS6/BoxStairsTool/master/LICENSE)
 ![](https://img.shields.io/badge/Unity3D%20version-5.4.0-lightgrey.svg)
 
