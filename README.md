@@ -27,3 +27,6 @@ This tool has been developed and tested on Unity3D version 5.4.0.
 
 # License
 This tool is licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+# Author
+[Juan Antonio Fajardo Serrano](https://es.linkedin.com/in/jafs6)
