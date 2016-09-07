@@ -12,6 +12,8 @@ Unity3D editor tool to copy elements of one GameObject's transform to others.
 #Usage
 Click the **CopyTransform Tool menu > Open Tool Window** to open de tool's window.
 
+<img src="https://cloud.githubusercontent.com/assets/6010819/18304494/f3f33882-74e2-11e6-934a-25b537bb0681.jpg" alt="CopyTransformTool Window image" height="300px">
+
 **Select/Unselect** the elements to copy, checking/unchecking the checkboxes for **Position**, **Rotation**, **Scale** and **Parent**.
 
 **Select** the source Transform on the **Source Transform** slot.
