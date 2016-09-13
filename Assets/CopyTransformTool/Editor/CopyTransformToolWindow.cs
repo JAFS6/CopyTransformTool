@@ -104,10 +104,7 @@ namespace CopyTransformTool
 
                 if (GUILayout.Button("Copy elements"))
                 {
-                    if (EditorUtility.DisplayDialog("Are you sure?", "This action can't be undo. Are you sure you want to do the copy with the selected parameters?", "Yes", "No"))
-                    {
-                        Copy();
-                    }
+                    Copy();
                 }
             }
 
@@ -123,6 +120,8 @@ namespace CopyTransformTool
         {
             for (int i = 0; i < Selection.gameObjects.Length; i++)
             {
+                Undo.RecordObject(Selection.gameObjects[i].transform, "Copy Transform elements");
+
                 if (CopyPosition)
                 {
                     Selection.gameObjects[i].transform.position = SourceTransform.position;
