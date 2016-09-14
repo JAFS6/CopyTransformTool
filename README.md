@@ -24,8 +24,6 @@ Click the **CopyTransform Tool menu > Open Tool Window** to open de tool's windo
 
 **Click** on the **copy elements** button.
 
-**Confirm** the action on the popup window.
-
 # Compatibility
 This tool has been developed and tested on Unity3D version 5.4.0.
 
