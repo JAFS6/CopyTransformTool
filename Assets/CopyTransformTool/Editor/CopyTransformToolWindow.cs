@@ -139,7 +139,7 @@ namespace CopyTransformTool
 
                 if (CopyParent)
                 {
-                    Selection.gameObjects[i].transform.SetParent(SourceTransform.parent);
+					Undo.SetTransformParent(Selection.gameObjects[i].transform, SourceTransform.parent, "Copy Transform elements");
                 }
             }
         }
