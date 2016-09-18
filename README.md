@@ -24,6 +24,8 @@ Click the **CopyTransform Tool menu > Open Tool Window** to open de tool's windo
 
 **Click** on the **copy elements** button.
 
+You can **Undo** the changes with **CTRL + Z** or **Edit > Undo Copy Transform elements**.
+
 # Compatibility
 This tool has been tested on Unity3D version 5.3.6f1 and 5.4.0f3 on Windows and Mac.
 
