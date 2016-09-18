@@ -15,7 +15,8 @@ Unzip it and **put** the **CopyTransformTool folder on** your Unity3D **project'
 ## Setup from unity package
 Import the package: **Assets > Import Package > Custom Package**, select the file and **import** all.
 
-Whatever form you use, you will see a new entry on the Window menu called CopyTransform Tool.
+## Result
+Whatever form you use, you will see a **new entry on the Window menu** called **CopyTransform Tool**.
 
 #Usage
 Click the **Window > CopyTransform Tool** to open de tool's window.
