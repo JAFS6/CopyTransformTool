@@ -7,10 +7,18 @@ Unity3D editor tool to copy elements of one GameObject's transform to others.
 --------
 
 # Setup
-**Download** the latest version of **CopyTransform Tool** from the [releases page](https://github.com/JAFS6/CopyTransformTool/releases), unzip it and **put** the **CopyTransformTool folder on** your Unity3D **project's assets folder**. This creates a new menu on your Unity Editor called CopyTransform Tool.
+**Download** the latest version of **CopyTransform Tool** from the [releases page](https://github.com/JAFS6/CopyTransformTool/releases). You can choose between the zip file or the unity package.
+
+## Setup from zip file
+Unzip it and **put** the **CopyTransformTool folder on** your Unity3D **project's assets folder**.
+
+## Setup from unity package
+Import the package: **Assets > Import Package > Custom Package**, select the file and **import** all.
+
+Whatever form you use, you will see a new entry on the Window menu called CopyTransform Tool.
 
 #Usage
-Click the **CopyTransform Tool menu > Open Tool Window** to open de tool's window.
+Click the **Window > CopyTransform Tool** to open de tool's window.
 
 <img src="https://cloud.githubusercontent.com/assets/6010819/18322785/c67bb7b0-7534-11e6-9d3c-f796b7f6c0a5.jpg" alt="CopyTransformTool Window image" height="300px">
 

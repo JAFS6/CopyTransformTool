@@ -41,7 +41,7 @@ namespace CopyTransformTool
 
         private Vector2 ScrollPosition;
 
-        [MenuItem("CopyTransform Tool/Open Tool Window")]
+        [MenuItem("Window/CopyTransform Tool")]
         private static void OpenToolWindow ()
         {
             CopyTransformToolWindow window = EditorWindow.GetWindow<CopyTransformToolWindow>();
@@ -139,7 +139,7 @@ namespace CopyTransformTool
 
                 if (CopyParent)
                 {
-                    Selection.gameObjects[i].transform.SetParent(SourceTransform.parent);
+					Undo.SetTransformParent(Selection.gameObjects[i].transform, SourceTransform.parent, "Copy Transform elements");
                 }
             }
         }
