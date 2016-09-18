@@ -25,10 +25,13 @@ Click the **CopyTransform Tool menu > Open Tool Window** to open de tool's windo
 **Click** on the **copy elements** button.
 
 # Compatibility
-This tool has been developed and tested on Unity3D version 5.4.0.
+This tool has been tested on Unity3D version 5.3.6f1 and 5.4.0f3 on Windows and Mac.
 
 # Troubleshooting
 If you have any problem, question, suggestion or bug report, [open an issue](https://github.com/JAFS6/CopyTransformTool/issues/new) and we will try to solve it.
+
+# Contributing
+If you want to help improve this tool, please test it and [create a new issue](https://github.com/JAFS6/CopyTransformTool/issues/new) if you find any bug.
 
 # License
 This tool is licensed under the [MIT license](https://opensource.org/licenses/MIT).
