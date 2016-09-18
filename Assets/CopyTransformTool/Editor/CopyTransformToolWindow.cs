@@ -41,7 +41,7 @@ namespace CopyTransformTool
 
         private Vector2 ScrollPosition;
 
-        [MenuItem("CopyTransform Tool/Open Tool Window")]
+        [MenuItem("Window/CopyTransform Tool")]
         private static void OpenToolWindow ()
         {
             CopyTransformToolWindow window = EditorWindow.GetWindow<CopyTransformToolWindow>();
