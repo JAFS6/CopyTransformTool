@@ -32,6 +32,8 @@ namespace CopyTransformTool
         private const int WindowHeight = 300;
         private const int MaxNameLabelWidth = 300;
         private const int ElementLabelWidth = 60;
+        private const int SourceTransformFieldWidth = 150;
+        private const int ScrollHeight = 100;
 
         private Transform SourceTransform;
         private bool CopyPosition = true;
@@ -75,12 +77,12 @@ namespace CopyTransformTool
             EditorGUILayout.EndHorizontal();
             EditorGUILayout.Space();
             EditorGUILayout.BeginHorizontal();
-            EditorGUILayout.LabelField("Source Transform:", EditorStyles.boldLabel, GUILayout.Width(150));
-            SourceTransform = (Transform)EditorGUILayout.ObjectField("", SourceTransform, typeof(Transform),true);
+            EditorGUILayout.LabelField("Source Transform:", EditorStyles.boldLabel, GUILayout.Width(SourceTransformFieldWidth));
+            SourceTransform = (Transform)EditorGUILayout.ObjectField("", SourceTransform, typeof(Transform), true);
 
             if (SourceTransform != null && EditorUtility.IsPersistent(SourceTransform))
             {
-            	SourceTransform = null;
+                SourceTransform = null;
             }
 
             EditorGUILayout.EndHorizontal();
@@ -88,7 +90,7 @@ namespace CopyTransformTool
             EditorGUILayout.LabelField("Name(s) of the selected GameObject(s):", EditorStyles.boldLabel);
             EditorGUILayout.Space();
 
-            ScrollPosition = EditorGUILayout.BeginScrollView(ScrollPosition, false, false, GUILayout.Height(100));
+            ScrollPosition = EditorGUILayout.BeginScrollView(ScrollPosition, false, false, GUILayout.Height(ScrollHeight));
 
             for (int i = 0; i < Selection.transforms.Length; i++)
             {
@@ -117,7 +119,7 @@ namespace CopyTransformTool
             EditorGUILayout.EndVertical();
         }
 
-        private void OnInspectorUpdate()
+        private void OnInspectorUpdate ()
         {
             Repaint();
         }
@@ -145,7 +147,7 @@ namespace CopyTransformTool
 
                 if (CopyParent)
                 {
-					Undo.SetTransformParent(Selection.transforms[i], SourceTransform.parent, "Copy Transform elements");
+                    Undo.SetTransformParent(Selection.transforms[i], SourceTransform.parent, "Copy Transform elements");
                 }
             }
         }
