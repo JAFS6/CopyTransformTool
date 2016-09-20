@@ -77,6 +77,12 @@ namespace CopyTransformTool
             EditorGUILayout.BeginHorizontal();
             EditorGUILayout.LabelField("Source Transform:", EditorStyles.boldLabel, GUILayout.Width(150));
             SourceTransform = (Transform)EditorGUILayout.ObjectField("", SourceTransform, typeof(Transform),true);
+
+            if (SourceTransform != null && EditorUtility.IsPersistent(SourceTransform))
+            {
+            	SourceTransform = null;
+            }
+
             EditorGUILayout.EndHorizontal();
             EditorGUILayout.Space();
             EditorGUILayout.LabelField("Name(s) of the selected GameObject(s):", EditorStyles.boldLabel);
@@ -84,9 +90,9 @@ namespace CopyTransformTool
 
             ScrollPosition = EditorGUILayout.BeginScrollView(ScrollPosition, false, false, GUILayout.Height(100));
 
-            for (int i = 0; i < Selection.gameObjects.Length; i++)
+            for (int i = 0; i < Selection.transforms.Length; i++)
             {
-                string name = Selection.gameObjects[i].name;
+                string name = Selection.transforms[i].gameObject.name;
 
                 if (name == "")
                 {
@@ -98,7 +104,7 @@ namespace CopyTransformTool
 
             EditorGUILayout.EndScrollView();
 
-            if (SourceTransform != null && Selection.gameObjects.Length > 0)
+            if (SourceTransform != null && Selection.transforms.Length > 0)
             {
                 EditorGUILayout.Space();
 
@@ -118,28 +124,28 @@ namespace CopyTransformTool
 
         private void Copy ()
         {
-            for (int i = 0; i < Selection.gameObjects.Length; i++)
+            for (int i = 0; i < Selection.transforms.Length; i++)
             {
-                Undo.RecordObject(Selection.gameObjects[i].transform, "Copy Transform elements");
+                Undo.RecordObject(Selection.transforms[i], "Copy Transform elements");
 
                 if (CopyPosition)
                 {
-                    Selection.gameObjects[i].transform.position = SourceTransform.position;
+                    Selection.transforms[i].position = SourceTransform.position;
                 }
 
                 if (CopyRotation)
                 {
-                    Selection.gameObjects[i].transform.rotation = Quaternion.Euler(SourceTransform.rotation.eulerAngles);
+                    Selection.transforms[i].rotation = Quaternion.Euler(SourceTransform.rotation.eulerAngles);
                 }
 
                 if (CopyScale)
                 {
-                    Selection.gameObjects[i].transform.localScale = SourceTransform.localScale;
+                    Selection.transforms[i].localScale = SourceTransform.localScale;
                 }
 
                 if (CopyParent)
                 {
-					Undo.SetTransformParent(Selection.gameObjects[i].transform, SourceTransform.parent, "Copy Transform elements");
+					Undo.SetTransformParent(Selection.transforms[i], SourceTransform.parent, "Copy Transform elements");
                 }
             }
         }
