@@ -6,6 +6,9 @@ Unity3D editor tool to copy elements of one GameObject's transform to others.
 
 --------
 
+# Motivation
+Have you ever placed a GameObject carefully in a place and have you noticed afterward you need another GameObject placed on its place? Maybe you want to match the rotation of one GameObject to place several copies in a row? Whatever your need is, this lightweight tool will help you in that moments, saving development time.
+
 # Setup
 **Download** the latest version of **CopyTransform Tool** from the [releases page](https://github.com/JAFS6/CopyTransformTool/releases). You can choose between the zip file or the unity package.
 
