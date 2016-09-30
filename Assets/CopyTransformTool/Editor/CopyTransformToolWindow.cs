@@ -32,7 +32,9 @@ namespace CopyTransformTool
         private const int WindowHeight = 300;
         private const int MaxNameLabelWidth = 300;
         private const int ElementLabelWidth = 60;
+        private const int SourceTransformLabelWidth = 140;
         private const int SourceTransformFieldWidth = 150;
+        private const int ClearSourceTransformButtonWidth = 60;
         private const int ScrollHeight = 100;
 
         private Transform SourceTransform;
@@ -77,9 +79,14 @@ namespace CopyTransformTool
             EditorGUILayout.EndHorizontal();
             EditorGUILayout.Space();
             EditorGUILayout.BeginHorizontal();
-            EditorGUILayout.LabelField("Source Transform:", EditorStyles.boldLabel, GUILayout.Width(SourceTransformFieldWidth));
-            SourceTransform = (Transform)EditorGUILayout.ObjectField("", SourceTransform, typeof(Transform), true);
+            EditorGUILayout.LabelField("Source Transform:", EditorStyles.boldLabel, GUILayout.Width(SourceTransformLabelWidth));
+            SourceTransform = (Transform)EditorGUILayout.ObjectField("", SourceTransform, typeof(Transform), true, GUILayout.Width(SourceTransformFieldWidth));
 
+            if (GUILayout.Button("Clear", GUILayout.Width(ClearSourceTransformButtonWidth)))
+            {
+                SourceTransform = null;
+            }
+            
             if (SourceTransform != null && EditorUtility.IsPersistent(SourceTransform))
             {
                 SourceTransform = null;
