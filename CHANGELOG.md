@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.2.3] - 2016-10-06
+### Added
+- Version file to the package.
+
 ## [1.2.2] - 2016-09-26
 ### Added
 - Motivation section to README file.
