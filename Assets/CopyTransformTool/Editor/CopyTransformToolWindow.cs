@@ -86,7 +86,7 @@ namespace CopyTransformTool
             {
                 SourceTransform = null;
             }
-            
+
             if (SourceTransform != null && EditorUtility.IsPersistent(SourceTransform))
             {
                 SourceTransform = null;
