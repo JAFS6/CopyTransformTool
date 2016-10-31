@@ -38,9 +38,6 @@ Click the **Window > CopyTransform Tool** to open de tool's window.
 
 You can **Undo** the changes with **CTRL + Z** or **Edit > Undo Copy Transform elements**.
 
-# Compatibility
-This tool has been tested on Unity3D version 5.3.6f1 and 5.4.0f3 on Windows and Mac.
-
 # Troubleshooting
 If you have any problem, question, suggestion or bug report, [open an issue](https://github.com/JAFS6/CopyTransformTool/issues/new) and we will try to solve it.
 
