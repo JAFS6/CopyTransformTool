@@ -1,5 +1,5 @@
 # CopyTransform Tool
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/JAFS6/CopyTransformTool/blob/develop/LICENSE.txt)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/JAFS6/CopyTransformTool/blob/master/LICENSE.txt)
 ![](https://img.shields.io/badge/Unity3D%20version-5.4.0-lightgrey.svg)
 
 Unity3D editor tool to copy elements of one GameObject's transform to others.
