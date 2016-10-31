@@ -38,6 +38,12 @@ Click the **Window > CopyTransform Tool** to open de tool's window.
 
 You can **Undo** the changes with **CTRL + Z** or **Edit > Undo Copy Transform elements**.
 
+## Additional features
+
+**Reset** position, rotation and/or scale checking/unchecking them, select the desired GameObjects and clicking over the **Reset elements** button.
+
+**Clear** source transform easily clicking the clear button.
+
 # Troubleshooting
 If you have any problem, question, suggestion or bug report, [open an issue](https://github.com/JAFS6/CopyTransformTool/issues/new) and we will try to solve it.
 
