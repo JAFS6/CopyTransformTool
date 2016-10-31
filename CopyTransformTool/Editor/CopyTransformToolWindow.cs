@@ -32,7 +32,9 @@ namespace CopyTransformTool
         private const int WindowHeight = 300;
         private const int MaxNameLabelWidth = 300;
         private const int ElementLabelWidth = 60;
+        private const int SourceTransformLabelWidth = 140;
         private const int SourceTransformFieldWidth = 150;
+        private const int ClearSourceTransformButtonWidth = 60;
         private const int ScrollHeight = 100;
 
         private Transform SourceTransform;
@@ -77,8 +79,13 @@ namespace CopyTransformTool
             EditorGUILayout.EndHorizontal();
             EditorGUILayout.Space();
             EditorGUILayout.BeginHorizontal();
-            EditorGUILayout.LabelField("Source Transform:", EditorStyles.boldLabel, GUILayout.Width(SourceTransformFieldWidth));
-            SourceTransform = (Transform)EditorGUILayout.ObjectField("", SourceTransform, typeof(Transform), true);
+            EditorGUILayout.LabelField("Source Transform:", EditorStyles.boldLabel, GUILayout.Width(SourceTransformLabelWidth));
+            SourceTransform = (Transform)EditorGUILayout.ObjectField("", SourceTransform, typeof(Transform), true, GUILayout.Width(SourceTransformFieldWidth));
+
+            if (GUILayout.Button("Clear", GUILayout.Width(ClearSourceTransformButtonWidth)))
+            {
+                SourceTransform = null;
+            }
 
             if (SourceTransform != null && EditorUtility.IsPersistent(SourceTransform))
             {
@@ -106,15 +113,27 @@ namespace CopyTransformTool
 
             EditorGUILayout.EndScrollView();
 
-            if (SourceTransform != null && Selection.transforms.Length > 0)
-            {
-                EditorGUILayout.Space();
+            EditorGUILayout.Space();
 
-                if (GUILayout.Button("Copy elements"))
+            EditorGUILayout.BeginHorizontal();
+
+            if (Selection.transforms.Length > 0)
+            {
+                if (SourceTransform != null)
                 {
-                    Copy();
+                    if (GUILayout.Button("Copy elements"))
+                    {
+                        Copy();
+                    }
+                }
+
+                if (GUILayout.Button("Reset elements"))
+                {
+                    Reset();
                 }
             }
+
+            EditorGUILayout.EndHorizontal();
 
             EditorGUILayout.EndVertical();
         }
@@ -148,6 +167,29 @@ namespace CopyTransformTool
                 if (CopyParent)
                 {
                     Undo.SetTransformParent(Selection.transforms[i], SourceTransform.parent, "Copy Transform elements");
+                }
+            }
+        }
+
+        private void Reset ()
+        {
+            for (int i = 0; i < Selection.transforms.Length; i++)
+            {
+                Undo.RecordObject(Selection.transforms[i], "Reset Copy Transform elements");
+
+                if (CopyPosition)
+                {
+                    Selection.transforms[i].position = Vector3.zero;
+                }
+
+                if (CopyRotation)
+                {
+                    Selection.transforms[i].rotation = Quaternion.Euler(0,0,0);
+                }
+
+                if (CopyScale)
+                {
+                    Selection.transforms[i].localScale = Vector3.one;
                 }
             }
         }
