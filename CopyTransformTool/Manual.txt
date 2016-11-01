@@ -1,0 +1,24 @@
+
+CopyTransform Tool Manual
+
+1. Click the Window > CopyTransform Tool to open de tool's window.
+
+2. Select/Unselect the elements to copy, checking/unchecking the checkboxes for Position, Rotation, Scale and Parent.
+
+3. Select the source Transform on the Source Transform slot.
+
+4. Select the target GameObject(s) on the scene, clicking them on the hierarchy or in the scene view. Shift click to add multiple GameObjects.
+
+5. Click on the copy elements button.
+
+6. You can Undo the changes with CTRL + Z or Edit > Undo Copy Transform elements.
+
+Extra Features
+
+- Click the Clear button to clear the Source Transform slot easily.
+
+- Reset elements:
+
+    1. Select/Unselect the elements to reset, checking/unchecking the checkboxes for Position, Rotation and Scale.
+
+    2. Click the Reset elements button to reset the selected elements of the selected GameObjects to default values: position to (0,0,0), rotation to (0,0,0) and scale to (1,1,1).
